@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head> 
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>
+    MLVC Dashboard
+</title>
+
+</head>
+<body>
+  {% include 'navbar.html' %}
+    <div class="content">
+        {% block content %}{% endblock %}
+    </div>
+</body>
+</html>
+
+
+{% set active_page = 'home' %}
