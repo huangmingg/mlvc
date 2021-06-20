@@ -6,6 +6,7 @@ from mlvc.pages.company_page import render as render_company
 from mlvc.pages.home_page import render as render_home
 from mlvc.pages.predict_page import render as render_predict
 
+server = app.server
 
 app.layout = html.Div([
     dcc.Location(id='url', refresh=False),
