@@ -3,7 +3,6 @@ import dash_bootstrap_components as dbc
 from dash.dependencies import Output, Input
 import dash_core_components as dcc
 import dash_html_components as html
-from app import app
 from mlvc.pages.company_page import render as render_company
 from mlvc.pages.home_page import render as render_home
 from mlvc.pages.predict_page import render as render_predict
@@ -33,7 +32,7 @@ def routing(pathname):
         pass
 
 def main():
-    app.run_server(debug=True, port=8888)
+    app.run_server(debug=True, port=30000)
 
 if __name__ == '__main__':
     main()
