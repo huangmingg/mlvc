@@ -1,0 +1,135 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h1>
+                    Unsupervised Learning
+                </h1>
+                <p>In this project, we sought to find distinct clusters of start-ups with similar characteristics to uncover insights on their growth prospect. 
+                    We used K-means, K-prototype and Hierarchical Clustering to cluster the start-ups. More details about each clustering approach can be found below. </p>
+            </div>
+            
+        </div>
+
+        <div class="row">
+            <div class="col-12">
+                <h2>
+                    Results
+                </h2>
+            </div>
+
+            <div class="col-12">
+                <p>We compared the results obtained from running the different unsupervised learning methods and did not find visually distinct groups of start-ups. The clusters seem to only be distinctly separable based on total funding amount. </p>
+            </div>
+           
+            <img src="#" width="200px" height="200px" alt="Results" class="ml-auto mr-auto" style="align-self: center;"> 
+          
+            <div class="col-12">
+                <p>Another observation is that the average number of active products being sold decreases as start-ups receive more funding. 
+                    This could be an indication that having fewer products is correlated with high funding amount. 
+                    Perhaps, start-ups with fewer products are able to devote more time and effort to develop and grow their business. 
+                    Being more focused on certain products may also give investors greater confidence in the start-up. </p>
+    
+            </div>
+            
+        </div>
+
+        
+        
+        <div class="row">
+            <div class="col-12">
+                <h2>
+                    K-Means Clustering
+                </h2>
+            </div>
+            
+            <div class="col-12">
+                <p>K-Means algorithm is one of the most popular unsupervised clustering algorithm. 
+                    It uses Euclidian distance between the points and centroids to determine the location of the cluster centroids and which points belong to that particular cluster. </p>
+    
+            </div>
+
+            <div class="col-12">
+                <p>Below is a brief overview of the K-Means algorithm:</p>
+                <ol>
+                    
+                    <li>Step 1</li>
+                    <li>Step 2</li>
+                </ol>
+            </div>
+            <div class="col-12">
+                <p><strong>Limitations</strong></p>
+                <ul>
+                    <li>Unable to handle categorical variables</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-12">
+                <h2>
+                    K-Modes
+                </h2>
+            </div>
+            
+            <div class="col-12">
+                <p>K-Modes is an extension of the K-Means that deals with categorical variables. 
+                    Instead of using Euclidian distance, it uses dissimilarities and frequency-based method (mode) to update the cluster centroids. </p>
+                <p>Matching dissimilarity score between two points is given by the total number of mismatches for all the categorical variables. 
+                    K-Mode uses matching dissimilarity to determine which cluster a point belongs to. </p>
+                <p>Mode is the most frequently occurring value in a group. This is then used to update the cluster centroids by taking the mode of the cluster for each categorical variable. 
+                    With that, the K-Modes method uses the same procedure as K-Means to cluster objects that have categorical attributes. </p>
+    
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-12">
+                <h2>
+                    K-Prototype Clustering
+                </h2>
+            </div>
+            
+            <div class="col-12">
+                <p>K-Prototype integrates both the K-Means and K-Mode algorithm to deal with dataset that have a mixed of numerical and categorical variables. 
+                    In K-Prototype, we separate the numerical data and categorical data and apply K-means and K-mode algorithm to them respectively. </p>
+    
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-12">
+                <h2>
+                    Hierarchical Clustering
+                </h2>
+            </div>
+            
+            <div class="col-12">
+                <p>A method of clustering in which we being by setting every data point as a cluster and slowly merge similar groups. 
+                    After a few iterations, we reach the final clusters wanted.</p>
+                <p>
+                    There are two types of hierarchical clustering – Agglomerative and Divisive. 
+                    Agglomerative begins with each point being a cluster and at each iteration, we merge the closest pair of clusters until a single cluster remains. 
+                    On the other hand, Divisive Hierarchical Clustering begins with all points belong to the same cluster. 
+                    At each iteration, we split the furthest point in the cluster and repeat this until each cluster has only one point.
+                </p>
+
+                <p>In this project, we decided to use agglomerative clustering. In order to choose the appropriate number of clusters, we used a dendrogram, which shows the sequence of merges from the algorithm. 
+                    In general, the longer the vertical lines in the dendrogram, the more the distance there is between those clusters. 
+                    We set the threshold where it cuts the tallest vertical line. 
+                </p>
+            </div>
+
+            <img src="#" width="200px" height="200px" alt="dendrogram" class="ml-auto mr-auto" style="align-self: center;"> 
+        </div>
+
+       
+
+    </div>
+    
+{% endblock %}
+
+{% set active_page = 'unsupervised' %}

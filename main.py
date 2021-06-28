@@ -6,6 +6,7 @@ import dash_html_components as html
 from mlvc.pages.company_page import render as render_company
 from mlvc.pages.home_page import render as render_home
 from mlvc.pages.predict_page import render as render_predict
+from mlvc.pages.unsupervised_learning_page import render as render_unsupervised
 
 app = dash.Dash(
     __name__, 
@@ -28,6 +29,8 @@ def routing(pathname):
         return render_company()
     elif pathname == '/predict/':
         return render_predict()    
+    elif pathname == '/unsupervised/':
+        return render_unsupervised()
     else:
         pass
 
