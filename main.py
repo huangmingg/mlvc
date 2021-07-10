@@ -20,16 +20,17 @@ app.layout = html.Div([
     html.Div(id='page-content')
 ])
 
-
 @app.callback(Output('page-content', 'children'), Input('url', 'pathname'))
 def routing(pathname):
-    if pathname == '/home/':
+    if pathname == '/':
         return render_home()
-    elif pathname == '/company/':
+    elif pathname == '/home':
+        return render_home()
+    elif pathname == '/company':
         return render_company()
-    elif pathname == '/predict/':
+    elif pathname == '/predict':
         return render_predict()    
-    elif pathname == '/unsupervised/':
+    elif pathname == '/unsupervised':
         return render_unsupervised()
     else:
         pass
