@@ -3,6 +3,7 @@ import dash_core_components as dcc
 import dash_dangerously_set_inner_html
 import pandas as pd
 import dash_table
+import requests
 from env import env
 
 def create_data_table(df):
@@ -22,10 +23,15 @@ def create_dataframe():
 
 df = create_dataframe()
 
+def get_api_data():
+    r = requests.get('https://mlvc-service.herokuapp.com/predict')
+    return r.text
+
 def render():
     template = env.get_template("company.html")
     nav_bar = dash_dangerously_set_inner_html.DangerouslySetInnerHTML(template.render())
     return html.Div(children=[nav_bar,
+                html.Textarea(placeholder=get_api_data()),
                 dcc.Graph(
                     id="histogram-graph",
                     figure={
