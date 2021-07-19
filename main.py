@@ -17,7 +17,8 @@ server = app.server
 
 app.layout = html.Div([
     dcc.Location(id='url', refresh=False),
-    html.Div(id='page-content')
+    html.Div(id='page-content'),
+    html.Img(id="image")
 ])
 
 @app.callback(Output('page-content', 'children'), Input('url', 'pathname'))

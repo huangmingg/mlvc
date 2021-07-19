@@ -2,7 +2,7 @@
 
 {% block content %}
     <div class="container">
-        <div class="row">
+        <div class="row" style="margin-bottom: 20px;">
             <div class="col-12">
                 <h1>
                     Unsupervised Learning
@@ -13,7 +13,7 @@
             
         </div>
 
-        <div class="row">
+        <div class="row" style="margin-bottom: 20px;">
             <div class="col-12">
                 <h2>
                     Results
@@ -24,21 +24,20 @@
                 <p>We compared the results obtained from running the different unsupervised learning methods and did not find visually distinct groups of start-ups. The clusters seem to only be distinctly separable based on total funding amount. </p>
             </div>
            
-            <img src="#" width="200px" height="200px" alt="Results" class="ml-auto mr-auto" style="align-self: center;"> 
+            <img src= "/assets/unsupervised/Kprototype-total_funding_amount vs total_products_active.png"  alt="Results" class="ml-auto mr-auto" style="align-self: center;"> 
           
             <div class="col-12">
                 <p>Another observation is that the average number of active products being sold decreases as start-ups receive more funding. 
                     This could be an indication that having fewer products is correlated with high funding amount. 
                     Perhaps, start-ups with fewer products are able to devote more time and effort to develop and grow their business. 
                     Being more focused on certain products may also give investors greater confidence in the start-up. </p>
-    
             </div>
             
         </div>
 
         
         
-        <div class="row">
+        <div class="row" style="margin-bottom: 20px;">
             <div class="col-12">
                 <h2>
                     K-Means Clustering
@@ -52,22 +51,24 @@
             </div>
 
             <div class="col-12">
-                <p>Below is a brief overview of the K-Means algorithm:</p>
-                <ol>
-                    
-                    <li>Step 1</li>
-                    <li>Step 2</li>
+                <p style="margin-bottom: 0px;"><strong>Below is a brief overview of the K-Means algorithm</strong>:</p>
+                <ol >
+                    <li>Randomly select K datapoints from the dataset that will serve as the initial cluster centroids</li>
+                    <li>For each data point, compute the sum of squared distance between it and the cluster centroids. 
+                        Assign each data point the closest cluster centroid.</li>
+                    <li>Re-compute the cluster centroids by taking the average of all the data points that belong to that cluster.</li>
+                    <li>Repeat steps 2-3 until there is no change to the centroids</li>
                 </ol>
             </div>
             <div class="col-12">
-                <p><strong>Limitations</strong></p>
+                <p style="margin-bottom: 0px;"><strong>Limitations</strong></p>
                 <ul>
                     <li>Unable to handle categorical variables</li>
                 </ul>
             </div>
         </div>
 
-        <div class="row">
+        <div class="row" style="margin-bottom: 20px;">
             <div class="col-12">
                 <h2>
                     K-Modes
@@ -76,7 +77,7 @@
             
             <div class="col-12">
                 <p>K-Modes is an extension of the K-Means that deals with categorical variables. 
-                    Instead of using Euclidian distance, it uses dissimilarities and frequency-based method (mode) to update the cluster centroids. </p>
+                    Instead of using Euclidian distance to obtain the distance between two points, it uses dissimilarities and frequency-based method (mode) to update the cluster centroids. </p>
                 <p>Matching dissimilarity score between two points is given by the total number of mismatches for all the categorical variables. 
                     K-Mode uses matching dissimilarity to determine which cluster a point belongs to. </p>
                 <p>Mode is the most frequently occurring value in a group. This is then used to update the cluster centroids by taking the mode of the cluster for each categorical variable. 
@@ -85,7 +86,7 @@
             </div>
         </div>
 
-        <div class="row">
+        <div class="row" style="margin-bottom: 20px;">
             <div class="col-12">
                 <h2>
                     K-Prototype Clustering
@@ -100,7 +101,7 @@
         </div>
 
 
-        <div class="row">
+        <div class="row" style="margin-bottom: 20px;">
             <div class="col-12">
                 <h2>
                     Hierarchical Clustering
@@ -123,7 +124,7 @@
                 </p>
             </div>
 
-            <img src="#" width="200px" height="200px" alt="dendrogram" class="ml-auto mr-auto" style="align-self: center;"> 
+            <img src= "/assets/unsupervised/HC-1.png"  alt="dendrogram" class="ml-auto mr-auto" style="align-self: center;"> 
         </div>
 
        
